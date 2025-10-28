@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Babamın Doğum Günü</title>
+<style>
+body {
+  margin:0;min-height:100vh;display:flex;justify-content:center;align-items:center;
+  background:linear-gradient(135deg,#ffd6e0,#ff9a8b);
+  font-family:Arial,sans-serif;overflow:hidden;
+}
+.card {
+  background:#ffffffcc;padding:40px 50px;text-align:center;border-radius:20px;
+  box-shadow:0 0 25px rgba(0,0,0,.2);max-width:750px;position:relative;
+}
+.icon {font-size:110px;margin-bottom:10px;}
+h1 {font-size:38px;font-weight:800;line-height:1.25;margin:0 0 10px;}
+.highlight1{color:#ff2e88}.highlight2{color:#ff8f1f}
+p {margin-top:10px;font-size:20px;opacity:.9}
+.cake{font-size:80px;position:absolute;right:-40px;top:40px}
+.button {
+  margin-top:18px;background:#ff5470;border:none;padding:12px 26px;border-radius:50px;
+  color:#fff;font-size:20px;cursor:pointer;transition:.2s;
+}
+.button:hover{transform:scale(1.07)}
+.info {margin-top:10px;font-size:14px;opacity:.6}
+.heart {
+  position:absolute;font-size:24px;animation:fall linear forwards;top:-5vh;
+}
+@keyframes fall {
+  to {transform:translateY(110vh);opacity:1;}
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="cake">🎂</div>
+  <div class="icon">❤️</div>
+
+  <h1>Doğum günün kutlu olsunnn<br>
+    <span class="highlight1">Hepide Börtdey Tu Yuu</span><br>
+    <span class="highlight2">dünyanın en mükemmel babası 🎉</span>
+  </h1>
+
+  <p>Seni çok seviyorum. Ben dünyanın en şanslı kızıyım. İyi ki varsın babamm 🤍</p>
+
+  <button class="button" onclick="kutla()">Kutla 🎊</button>
+  <div class="info">👇 Butona tıkla babişimm</div>
+</div>
+
+<script>
+function rastgele(min,max){return Math.random()*(max-min)+min;}
+function kalp(){
+  const h=document.createElement("div");
+  h.className="heart";
+  h.textContent=["❤️","💖","💗","💘","💕"][Math.floor(Math.random()*5)];
+  h.style.left=rastgele(0,100)+"vw";
+  h.style.animationDuration=rastgele(3,6)+"s";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),7000);
+}
+function kutla(){
+  for(let i=0;i<45;i++) setTimeout(kalp,i*80);
+}
+</script>
+</body>
+</html>
